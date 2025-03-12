@@ -12,4 +12,12 @@ public class Guesser {
         new Guesser();
     }
 
+    public Guesser(){
+        boolean keepGoing = true;
+        while(keepGoing){
+    
+          String response = menu();
+
+          if
+    
 }
