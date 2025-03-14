@@ -13,7 +13,7 @@ public class Guesser {
         new Guesser();
     }
 
-public static humanGuesser() {
+public void humanGuesser() {
     System.out.println("I am thinking of a number between 1 and 100. Please enter a number: ")
 
     while(guess != randomInt){
@@ -39,7 +39,7 @@ private int getMean(int lower, int upper){
     return mean;
 }
     
-public static computerGuesser() {
+public void computerGuesser() {
     int lower = 1;
     int upper = 100;
     int try = getMean(lower, upper);
