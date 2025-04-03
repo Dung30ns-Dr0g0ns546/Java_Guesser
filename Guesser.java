@@ -3,9 +3,10 @@ import java.util.Scanner;
 
 
 public class Guesser {
-
-
     Scanner input = new Scanner(System.in);
+    Random random = new Random();
+    int randomNumber = random.nextInt(100) + 1;
+    int attempt = 0;
    
     public static void main(String[] args) {
         new Guesser();
@@ -20,10 +21,11 @@ public class Guesser {
                 keepGoing = false;
             } elseif (result.equals("1")){
                 humanGuesser();
-            } else {
+            } elseif (result.equal("2")){
                 computerGuesser();
+            } else {
+                System.out.println("Please enter 0-2")
             }
-   
            
         };
     }
@@ -38,6 +40,45 @@ public class Guesser {
 
         String result = input.nextLine();
         return result;
+    }
+
+    public boolean humanGuesser(){
+        System.out.println("I am thinking of a number between 1 and 100. Try your best to guess it.");
+
+        boolean keepGoing = true;
+        while(keepGoing){
+            System.out.println("Please guess the number: ")
+            String userResult = input.nextLine();
+            attempt++;
+
+
+            if (userResult > randomNumber){
+                System.out.println("Too high, try again.");
+            } elseif (userResult < randomNumber){
+                System.out.println("Too low, try again.");
+            } elseif (userResult = randomNumber){
+                System.out.println("Congrats! You guessed the number!");
+                keepGoing = false;
+            } else {
+                System.out.println("You've ran out of tries. Better luck next time...");
+                keepGoing = false;
+            }
+        }
+
+    }
+
+    public boolean computerGuesser(){
+        System.out.println("Think of a number between 1 and 100. I'm going to try and guess it.")
+        boolean keepGoing = true;
+        
+        while(keepGoing){
+        System.out.println("Is the number... " + randomNumber() + "?");
+        String response = input.nextLine();
+        attempt++;
+
+        if ()
+
+        }
     }
     
 }
