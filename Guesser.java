@@ -18,7 +18,7 @@ public class Guesser {
             String result = menu();
             if (result.equals("0")){
                 keepGoing = false;
-            } elseif (result.equals("1"));{
+            } elseif (result.equals("1")){
                 humanGuesser();
             } else {
                 computerGuesser();
@@ -29,9 +29,9 @@ public class Guesser {
     }
 
     public String menu(){
-        System.out.println("0. Exit");
-        System.out.println("1. Human Guesser");
-        System.out.println("2. Computer Guesser");
+        System.out.println("0). Exit");
+        System.out.println("1). Human Guesser");
+        System.out.println("2). Computer Guesser");
 
         System.out.println();
         System.out.println("Please enter 0-2: ");
