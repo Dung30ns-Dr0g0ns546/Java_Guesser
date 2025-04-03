@@ -21,7 +21,7 @@ public class Guesser {
             } elseif (result.equals("1"));{
                 humanGuesser();
             } else {
-                
+                computerGuesser();
             }
    
            
