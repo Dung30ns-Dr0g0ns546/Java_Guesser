@@ -19,9 +19,9 @@ public class Guesser {
             String result = menu();
             if (result.equals("0")){
                 keepGoing = false;
-            } elseif (result.equals("1")){
+            } else if (result.equals("1")){
                 humanGuesser();
-            } elseif (result.equal("2")){
+            } else if (result.equal("2")){
                 computerGuesser();
             } else {
                 System.out.println("Please enter 0-2")
@@ -48,15 +48,15 @@ public class Guesser {
         boolean keepGoing = true;
         while(keepGoing){
             System.out.println("Please guess the number: ")
-            String userResult = input.nextLine();
+            int userResult = input.nextInt();
             attempt++;
 
 
             if (userResult > randomNumber){
                 System.out.println("Too high, try again.");
-            } elseif (userResult < randomNumber){
+            } else if (userResult < randomNumber){
                 System.out.println("Too low, try again.");
-            } elseif (userResult = randomNumber){
+            } else if (userResult = randomNumber){
                 System.out.println("Congrats! You guessed the number!");
                 keepGoing = false;
             } else {
@@ -75,6 +75,8 @@ public class Guesser {
         System.out.println("Is the number... " + randomNumber() + "?");
         String response = input.nextLine();
         attempt++;
+
+
 
         if ()
 
