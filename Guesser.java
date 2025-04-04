@@ -24,7 +24,7 @@ public class Guesser {
             } else if (result.equal("2")){
                 computerGuesser();
             } else {
-                System.out.println("Please enter 0-2")
+                System.out.println("Please enter 0-2");
             }
            
         };
@@ -47,7 +47,7 @@ public class Guesser {
 
         boolean keepGoing = true;
         while(keepGoing){
-            System.out.println("Please guess the number: ")
+            System.out.println("Please guess the number: ");
             int userResult = input.nextInt();
             attempt++;
 
@@ -68,7 +68,7 @@ public class Guesser {
     }
 
     public boolean computerGuesser(){
-        System.out.println("Think of a number between 1 and 100. I'm going to try and guess it.")
+        System.out.println("Think of a number between 1 and 100. I'm going to try and guess it.");
         boolean keepGoing = true;
         
         while(keepGoing){
