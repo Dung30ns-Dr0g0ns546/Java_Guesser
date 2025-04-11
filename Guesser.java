@@ -78,12 +78,27 @@ public class Guesser {
 
 
 
-        if ()
+        if (response.equals("Correct")){
+            System.out.println("Yay! I guessed it in " + attempt + " attempts.");
+                keepGoing = false;
+            } else if (response.equals("higher")) {
+                low = guess + 1;
+            } else if (response.equals("lower")) {
+                high = guess - 1;
+            } else {
+                System.out.println("Please respond with 'higher', 'lower', or 'correct'.");
+            }
 
+            if (low > high) {
+                System.out.println("Hmm, it seems there was a misunderstanding. Let's try again.");
+                return false;
+            }
         }
+
+        return true;
     }
-    
 }
+
     
 
 
