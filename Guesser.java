@@ -31,6 +31,8 @@ public class Guesser {
     }
 
     public String menu(){
+        Scanner input = new Scanner(System.in);
+        
         System.out.println("0). Exit");
         System.out.println("1). Human Guesser");
         System.out.println("2). Computer Guesser");
@@ -43,6 +45,8 @@ public class Guesser {
     }
 
     public boolean humanGuesser(){
+        Scanner input = new Scanner(System.in);
+        
         System.out.println("I am thinking of a number between 1 and 100. Try your best to guess it.");
 
         boolean keepGoing = true;
