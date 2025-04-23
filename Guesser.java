@@ -21,7 +21,7 @@ public class Guesser {
                 keepGoing = false;
             } else if (result.equals("1")){
                 humanGuesser();
-            } else if (result.equal("2")){
+            } else if (result.equals("2")){
                 computerGuesser();
             } else {
                 System.out.println("Please enter 0-2");
@@ -44,61 +44,72 @@ public class Guesser {
         return result;
     }
 
-    public boolean humanGuesser(){
+    public void humanGuesser(){
         Scanner input = new Scanner(System.in);
-        
+        int attempts = 0;
         System.out.println("I am thinking of a number between 1 and 100. Try your best to guess it.");
 
         boolean keepGoing = true;
         while(keepGoing){
-            System.out.println("Please guess the number: ");
-            int userResult = input.nextInt();
-            attempt++;
 
+            if(attempts <= 7){
 
-            if (userResult > randomNumber){
-                System.out.println("Too high, try again.");
-            } else if (userResult < randomNumber){
-                System.out.println("Too low, try again.");
-            } else if (userResult = randomNumber){
-                System.out.println("Congrats! You guessed the number!");
-                keepGoing = false;
-            } else {
-                System.out.println("You've ran out of tries. Better luck next time...");
+                System.out.printf("%d). Please guess the number: ",attempts);
+                int userResult = input.nextInt();
+                attempts++;
+
+                if (userResult > randomNumber){
+                    System.out.println("Too high, try again.");
+                } else if (userResult < randomNumber){
+                    System.out.println("Too low, try again.");
+                } else if (userResult == randomNumber){
+                    System.out.println("Congrats! You guessed the number!");
+                    keepGoing = false;
+                } else {
+                    System.out.println("You've ran out of tries. Better luck next time...");
+                    keepGoing = false;
+                }
+            }else{
+                System.out.println("You lose!");
                 keepGoing = false;
             }
         }
 
     }
 
-    public boolean computerGuesser(){
+    public void computerGuesser(){
         System.out.println("Think of a number between 1 and 100. I'm going to try and guess it.");
         boolean keepGoing = true;
+        int low = 0;
+        int high = 100;
+        int guess = (low + high) / 2;
+
         
         while(keepGoing){
-        System.out.println("Is the number... " + randomNumber() + "?");
-        String response = input.nextLine();
-        attempt++;
+            
+            attempt++;
+
+            System.out.printf("%d). My guess is %d was higher(h), lower(l), or correct(c)?: \n",attempt,guess);
+            String response = input.nextLine();
 
 
+            if (response.equals("c")){
+                System.out.println("Yay! I guessed it in " + attempt + " attempts.");
+                    keepGoing = false;
+                } else if (response.equals("h")) {
+                    low = guess + 1;
+                } else if (response.equals("l")) {
+                    high = guess - 1;
+                } else {
+                    System.out.println("Please respond with h(higher), l(lower), c(correct).");
+                }
 
-        if (response.equals("Correct")){
-            System.out.println("Yay! I guessed it in " + attempt + " attempts.");
-                keepGoing = false;
-            } else if (response.equals("higher")) {
-                low = guess + 1;
-            } else if (response.equals("lower")) {
-                high = guess - 1;
-            } else {
-                System.out.println("Please respond with 'higher', 'lower', or 'correct'.");
-            }
+                guess = (low + high) / 2;
 
-            if (low > high) {
-                System.out.println("Hmm, it seems there was a misunderstanding. Let's try again.");
-                return false;
-            }
+                if (low > high) {
+                    System.out.println("Hmm, it seems there was a misunderstanding. Let's try again.");
+                    keepGoing = false;
+                }
         }
-
-        return true;
     }
 }
